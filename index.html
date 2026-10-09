@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Crofton Mediation and Coaching offers family, separating-couple, community and workplace mediation, alongside interpersonal conflict coaching. Available in person and online across Ireland.">
+  <meta name="theme-color" content="#173f3a">
+  <title>Crofton Mediation and Coaching | A constructive way forward</title>
+  <style>
+    :root {
+      --ink: #203330;
+      --muted: #5e6d68;
+      --green: #173f3a;
+      --green-2: #2d6559;
+      --sage: #e7eee8;
+      --cream: #f8f6f0;
+      --sand: #e6d8c2;
+      --white: #ffffff;
+      --line: #d9e1db;
+      --shadow: 0 18px 50px rgba(23, 63, 58, .10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar {
+      background: var(--green);
+      color: #f4f7f3;
+      font-size: .9rem;
+      padding: 9px 0;
+    }
+    .topbar .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .topbar a { text-decoration: none; }
+    header {
+      background: rgba(248,246,240,.96);
+      border-bottom: 1px solid rgba(217,225,219,.85);
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 82px; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+    .brand-mark {
+      width: 43px; height: 43px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--green); color: white;
+      font-family: Georgia, serif; font-size: 1.35rem; flex: 0 0 auto;
+    }
+    .brand-name { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; line-height: 1.2; font-weight: 700; }
+    .brand-sub { display: block; color: var(--muted); font-size: .72rem; letter-spacing: .11em; text-transform: uppercase; margin-top: 4px; }
+    nav { display: flex; align-items: center; gap: 24px; }
+    nav a { text-decoration: none; font-size: .92rem; font-weight: 600; color: #334b45; }
+    nav a:hover { color: var(--green-2); }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 20px; border-radius: 999px; border: 1px solid transparent;
+      background: var(--green); color: white; text-decoration: none; font-weight: 700;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .button:hover { background: var(--green-2); transform: translateY(-1px); }
+    .button.light { background: transparent; border-color: rgba(255,255,255,.7); color: white; }
+    .button.light:hover { background: rgba(255,255,255,.12); }
+    .hero {
+      position: relative; overflow: hidden;
+      background: linear-gradient(118deg, #173f3a 0%, #24564c 62%, #396c5d 100%);
+      color: white; padding: 90px 0 86px;
+    }
+    .hero:after {
+      content: ""; position: absolute; width: 490px; height: 490px; right: -100px; top: -190px;
+      border: 1px solid rgba(255,255,255,.18); border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(255,255,255,.035), 0 0 0 95px rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: center; position: relative; z-index: 1; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; font-weight: 800; }
+    .hero .eyebrow { color: #d9e7d9; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; line-height: 1.14; }
+    h1 { font-size: clamp(2.7rem, 5.5vw, 4.7rem); margin: 18px 0 22px; letter-spacing: -.035em; max-width: 720px; }
+    .hero p { font-size: 1.13rem; max-width: 640px; color: #edf3ee; margin: 0 0 30px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-card {
+      background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.2);
+      border-radius: var(--radius); padding: 28px; backdrop-filter: blur(4px);
+    }
+    .hero-card .small-title { color: #dce8de; font-size: .82rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 800; }
+    .hero-card h2 { font-size: 1.8rem; margin: 12px 0 14px; }
+    .hero-card ul { padding: 0; list-style: none; margin: 0; }
+    .hero-card li { padding: 11px 0; border-top: 1px solid rgba(255,255,255,.18); color: #f0f4ef; }
+    .hero-card li:before { content: "—"; color: #d8c5a5; margin-right: 10px; }
+    .credentials { background: var(--white); border-bottom: 1px solid var(--line); }
+    .credential-row { display: flex; justify-content: center; align-items: center; gap: 26px; padding: 22px 0; text-align: center; flex-wrap: wrap; }
+    .credential { display: flex; align-items: center; gap: 10px; color: #40544d; font-size: .94rem; font-weight: 650; }
+    .credential .dot { width: 8px; height: 8px; background: #b99b6b; border-radius: 50%; }
+    section { padding: 82px 0; }
+    .section-head { max-width: 720px; margin-bottom: 38px; }
+    .section-head .eyebrow { color: var(--green-2); }
+    h2 { font-size: clamp(2.15rem, 4vw, 3.2rem); margin: 13px 0 17px; letter-spacing: -.025em; }
+    .section-head p { color: var(--muted); font-size: 1.06rem; margin: 0; }
+    .services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .service-card {
+      padding: 30px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white);
+      box-shadow: 0 5px 22px rgba(23,63,58,.035);
+    }
+    .service-icon {
+      width: 48px; height: 48px; border-radius: 15px; display: grid; place-items: center;
+      background: var(--sage); color: var(--green); font-size: 1.35rem; margin-bottom: 20px;
+    }
+    .service-card h3 { font-size: 1.65rem; margin: 0 0 12px; }
+    .service-card p { color: var(--muted); margin: 0 0 15px; }
+    .service-card ul { margin: 0; padding-left: 19px; color: #40544d; }
+    .service-card li { margin: 6px 0; }
+    .approach { background: var(--sage); }
+    .approach-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
+    .approach .section-head { margin-bottom: 0; }
+    .principles { display: grid; gap: 14px; }
+    .principle { display: grid; grid-template-columns: 42px 1fr; gap: 15px; padding: 20px; border-radius: 16px; background: rgba(255,255,255,.72); }
+    .principle-number { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: white; font-weight: 700; }
+    .principle h3 { font-size: 1.25rem; margin: 0 0 5px; }
+    .principle p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .about-grid { display: grid; grid-template-columns: .72fr 1.28fr; gap: 54px; align-items: center; }
+    .about-panel {
+      min-height: 310px; border-radius: var(--radius); padding: 30px; color: white;
+      background: linear-gradient(145deg, #244f46, #173f3a); display: flex; flex-direction: column; justify-content: end;
+      position: relative; overflow: hidden;
+    }
+    .about-panel:before { content: "“"; position: absolute; top: 4px; left: 20px; color: rgba(255,255,255,.12); font-family: Georgia,serif; font-size: 12rem; line-height: 1; }
+    .about-panel p { position: relative; z-index: 1; font-family: Georgia,serif; font-size: 1.65rem; line-height: 1.3; margin: 0; }
+    .about-copy p { color: var(--muted); }
+    .credential-list { display: grid; gap: 12px; margin-top: 22px; }
+    .credential-item { display: flex; gap: 12px; align-items: flex-start; }
+    .check { color: var(--green-2); font-weight: 900; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .step { border-top: 3px solid var(--sand); padding: 22px 18px 0 0; }
+    .step .num { font-size: .82rem; color: var(--green-2); font-weight: 850; letter-spacing: .12em; }
+    .step h3 { font-size: 1.4rem; margin: 10px 0; }
+    .step p { color: var(--muted); margin: 0; }
+    .contact { background: var(--green); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr .9fr; gap: 60px; align-items: start; }
+    .contact .eyebrow { color: #d8e6d8; }
+    .contact h2 { max-width: 590px; }
+    .contact-copy { color: #e0eae2; max-width: 570px; }
+    .contact-card { background: white; color: var(--ink); border-radius: var(--radius); padding: 28px; }
+    .contact-row { padding: 15px 0; border-bottom: 1px solid var(--line); }
+    .contact-row:last-of-type { border-bottom: 0; }
+    .contact-label { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; color: var(--muted); margin-bottom: 4px; }
+    .contact-row a { text-decoration: none; font-weight: 700; overflow-wrap: anywhere; }
+    .contact-row a:hover { color: var(--green-2); }
+    .contact-card .button { width: 100%; margin-top: 18px; }
+    footer { background: #102f2b; color: #d5e0d7; padding: 24px 0; font-size: .86rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    footer a { color: #fff; }
+    .mobile-menu-note { display: none; }
+    @media (max-width: 850px) {
+      .hero-grid, .approach-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+      .hero { padding: 70px 0; }
+      .hero-card { max-width: 560px; }
+      .about-panel { min-height: 230px; }
+      nav { gap: 13px; }
+      nav a { font-size: .85rem; }
+      .nav .button { display: none; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 30px, 1120px); }
+      .topbar .wrap { justify-content: center; }
+      .nav { min-height: 72px; }
+      .brand-name { font-size: 1.05rem; }
+      .brand-sub { font-size: .62rem; }
+      nav { display: none; }
+      .hero { padding: 58px 0; }
+      h1 { font-size: 2.65rem; }
+      section { padding: 62px 0; }
+      .services-grid, .steps { grid-template-columns: 1fr; }
+      .service-card { padding: 24px; }
+      .credential-row { gap: 12px 20px; }
+      .credential { font-size: .84rem; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <span>In-person and online appointments</span>
+      <span>Working with individuals and organisations across Ireland</span>
+    </div>
+  </div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Crofton Mediation and Coaching home">
+        <span class="brand-mark">C</span>
+        <span><span class="brand-name">Crofton Mediation</span><span class="brand-sub">and Coaching</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#approach">My approach</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button" href="#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Mediation · Conflict coaching</div>
+          <h1>A constructive way forward starts with a conversation.</h1>
+          <p>When conflict feels difficult to navigate, a calm, impartial space can help people understand what matters, explore their options and work toward a way forward.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Arrange an initial conversation <span aria-hidden="true">→</span></a>
+            <a class="button light" href="#services">Explore services</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Services overview">
+          <div class="small-title">Support for difficult conversations</div>
+          <h2>Practical support, with people at the centre.</h2>
+          <ul>
+            <li>Family and separating-couple mediation</li>
+            <li>Community and workplace mediation</li>
+            <li>Interpersonal conflict coaching</li>
+            <li>In-person or online, Ireland-wide</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <div class="credentials" aria-label="Professional credentials and availability">
+      <div class="wrap credential-row">
+        <div class="credential"><span class="dot"></span> Accredited Member, Mediation Institute of Ireland</div>
+        <div class="credential"><span class="dot"></span> Cinergy Conflict Coach</div>
+        <div class="credential"><span class="dot"></span> Available across Ireland</div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">How I can help</div>
+          <h2>Different situations. A focus on moving forward.</h2>
+          <p>Conflict can affect family relationships, working lives and the wider community. Mediation and conflict coaching offer different kinds of support, depending on the people involved and what they need.</p>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⌂</div>
+            <h3>Family mediation</h3>
+            <p>A supported conversation for family members who need to address difficult issues, improve communication or explore practical arrangements.</p>
+            <ul>
+              <li>Family conflict and communication</li>
+              <li>Support for separating couples</li>
+              <li>Exploring options and shared decisions</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">↔</div>
+            <h3>Workplace mediation</h3>
+            <p>Impartial support for colleagues or teams experiencing tension, misunderstandings or ongoing disagreement at work.</p>
+            <ul>
+              <li>Interpersonal and team conflict</li>
+              <li>Communication and working relationships</li>
+              <li>Constructive dialogue and next steps</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◎</div>
+            <h3>Community mediation</h3>
+            <p>A structured opportunity for people in a community to talk through a dispute, hear different perspectives and consider practical ways forward.</p>
+            <ul>
+              <li>Neighbourhood or community disputes</li>
+              <li>Understanding different perspectives</li>
+              <li>Working toward workable agreements</li>
+            </ul>
+          </article>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✳</div>
+            <h3>Interpersonal conflict coaching</h3>
+            <p>One-to-one coaching to help you make sense of a conflict, consider your options and prepare for a challenging conversation.</p>
+            <ul>
+              <li>Conflict in family or personal relationships</li>
+              <li>Workplace communication challenges</li>
+              <li>Building confidence and choosing next steps</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="wrap approach-grid">
+        <div class="section-head">
+          <div class="eyebrow">My approach</div>
+          <h2>Calm, impartial and focused on what comes next.</h2>
+          <p>Conflict can leave people feeling stuck, unheard or unsure how to proceed. My role is to support a more constructive process, without taking sides or deciding the outcome for you.</p>
+        </div>
+        <div class="principles">
+          <div class="principle">
+            <div class="principle-number">1</div>
+            <div><h3>Space to be heard</h3><p>Make room for each person's perspective and help the conversation feel more manageable.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-number">2</div>
+            <div><h3>Clarity and understanding</h3><p>Identify the issues that matter, explore differences and clarify what may be possible.</p></div>
+          </div>
+          <div class="principle">
+            <div class="principle-number">3</div>
+            <div><h3>Practical next steps</h3><p>Focus on options and constructive steps that reflect the needs and circumstances of those involved.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-panel">
+          <p>“A difficult conversation can be the beginning of a better understanding.”</p>
+        </div>
+        <div class="about-copy">
+          <div class="eyebrow" style="color:var(--green-2)">About Crofton Mediation and Coaching</div>
+          <h2>Professional support, delivered with care.</h2>
+          <p>I provide mediation and interpersonal conflict coaching for people navigating challenging situations in family, community and workplace settings. My aim is to offer a respectful, practical process that helps people consider their options and find a constructive way forward.</p>
+          <div class="credential-list">
+            <div class="credential-item"><span class="check">✓</span><span>Accredited Member of the Mediation Institute of Ireland</span></div>
+            <div class="credential-item"><span class="check">✓</span><span>Cinergy Conflict Coach</span></div>
+            <div class="credential-item"><span class="check">✓</span><span>Appointments available in person and online throughout Ireland</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:#fff">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Getting started</div>
+          <h2>A simple first step.</h2>
+          <p>You do not need to have everything figured out before making contact. A first conversation can help clarify the support that may be appropriate for your situation.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">STEP 01</div><h3>Make contact</h3><p>Get in touch by email or phone and briefly describe the kind of support you are looking for.</p></div>
+          <div class="step"><div class="num">STEP 02</div><h3>Explore your options</h3><p>We can discuss whether mediation or individual conflict coaching may be a suitable next step.</p></div>
+          <div class="step"><div class="num">STEP 03</div><h3>Agree the way forward</h3><p>If appropriate, we can discuss practical arrangements for meeting in person or online.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Let's start with a conversation.</h2>
+          <p class="contact-copy">If you are considering mediation or conflict coaching, you are welcome to get in touch. Share as much or as little as you feel comfortable with at first, and we can discuss possible next steps.</p>
+          <p class="contact-copy">Available in person and online, working Ireland-wide.</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row"><span class="contact-label">Email</span><a href="mailto:mattcrofton1@hotmail.com">mattcrofton1@hotmail.com</a></div>
+          <div class="contact-row"><span class="contact-label">Phone</span><a href="tel:+353872105759">+353 87 210 5759</a></div>
+          <div class="contact-row"><span class="contact-label">Availability</span><strong>In person and online · Ireland-wide</strong></div>
+          <a class="button" href="mailto:mattcrofton1@hotmail.com?subject=Enquiry%20-%20Crofton%20Mediation%20and%20Coaching">Email to make an enquiry <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Crofton Mediation and Coaching</span>
+      <span>Professional, impartial support for conflict and difficult conversations.</span>
+    </div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
